@@ -1,3 +1,0 @@
-Fuel Per Lap = 2.8 
-Total Race Time = 60.0
-Average Lap Time = 1:45.4

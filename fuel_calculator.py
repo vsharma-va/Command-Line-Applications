@@ -26,15 +26,17 @@ def main():
     if args.detailed:
         print(f'''Fuel Per Lap = {args.fpl} \nTotal Race Time = {args.trt}
 Average Lap Time = {args.avlm}:{args.avls}.{args.avlt}''')
-        print(calculate_fuel(args.fpl, args.trt, args.avlm, args.avls, args.avlt))
+        answer = calculate_fuel(args.fpl, args.trt, args.avlm, args.avls, args.avlt)
+        print(answer)
     elif args.quiet:
-        print(calculate_fuel(args.fpl, args.trt, args.avlm, args.avls, args.avlt))
+        answer = calculate_fuel(args.fpl, args.trt, args.avlm, args.avls, args.avlt)
+        print(answer)
 
     if args.save and args.track:
         file = open('F://IDEs//Python Saves//CLI//acc.txt', 'a')
         file.write('\n')
         file.writelines(f'''\nFuel Per Lap = {args.fpl} \nTotal Race Time = {args.trt}
-Average Lap Time = {args.avlm}:{args.avls}.{args.avlt} \nTrack Name = {args.track}''')
+Average Lap Time = {args.avlm}:{args.avls}.{args.avlt} \nTrack Name = {args.track} \nFuel Required = {answer}''')
         file.close()
     elif args.save and not args.track:
         print("If you want to save you will have to provide track name")
